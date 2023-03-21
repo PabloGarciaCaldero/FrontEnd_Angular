@@ -29,7 +29,7 @@ export class EmployeeService {
   }
 
   deleteTodosEmployees(): Observable<any>{
-    return this.http.delete(this.url);
+    return this.http.delete(this.url + '/');
   }
 
 }
