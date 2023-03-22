@@ -37,29 +37,29 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="position" class="control-label col-sm-2">
-            Position
+          <label for="surname" class="control-label col-sm-2">
+            Surname
           </label>
           <div class="col-sm-10">
             <input 
               type="text" 
               class="form-control" 
-              id="position" 
-              name="position" [(ngModel)]="model.position" 
-              placeholder="Enter a New Position">
+              id="surname" 
+              name="surname" [(ngModel)]="model.surname" 
+              placeholder="Enter a New Surname">
           </div>
         </div>
         <div class="form-group">
-          <label for="office" class="control-label col-sm-2">
-            Office
+          <label for="email" class="control-label col-sm-2">
+            Email
           </label>
           <div class="col-sm-10">
             <input 
               type="text" 
               class="form-control" 
-              id="office" 
-              name="office" [(ngModel)]="model.office" 
-              placeholder="Enter a New Office">
+              id="email" 
+              name="email" [(ngModel)]="model.email" 
+              placeholder="Enter a New Email">
           </div>
         </div>
         <div class="form-group">
@@ -67,14 +67,14 @@
             <button
               type="submit"
               class="btn btn-success"
-              (click)="agregarEmployee()"
+              (click)="agregarUser()"
             >
             Save
             </button>
             <button
               type="submit"
               class="btn btn-danger"
-              (click)="deleteAllEmployees()"
+              (click)="deleteAllUsers()"
               >
             DeleteAllEmployees
             </button>
@@ -96,16 +96,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let employee of employees; let i = index">
+          <tr *ngFor="let employee of users; let i = index">
             <!--<td>{{employee._id}}</td>-->
             <td>{{employee.name}}</td>
-            <td>{{employee.position}}</td>
-            <td>{{employee.office | slice:0:5}}</td>
+            <td>{{employee.surname}}</td>
+            <td>{{employee.email | slice:0:5}}</td>
             <td>
-              <a (click)="editEmployee(i)" class="btn btn-success">
+              <a (click)="editarUser(i)" class="btn btn-success">
                 Edit
               </a>
-              <a (click)="eliminarEmployee(employee._id)" class="btn btn-danger">
+              <a (click)="eliminarUser(employee._id)" class="btn btn-danger">
                 Delete
               </a>
             </td>
@@ -138,7 +138,7 @@
               type="text" 
               class="form-control" 
               id="position" 
-              name="position" [(ngModel)]="model2.position" 
+              name="position" [(ngModel)]="model2.surname" 
               placeholder="Enter a New Position">
           </div>
         </div>
@@ -151,7 +151,7 @@
               type="text" 
               class="form-control" 
               id="office" 
-              name="office" [(ngModel)]="model2.office" 
+              name="office" [(ngModel)]="model2.email" 
               placeholder="Enter a New Office">
           </div>
         </div>
@@ -160,7 +160,7 @@
             <button
               type="submit"
               class="btn btn-success"
-              (click)="editarEmployee(model2._id)"
+              (click)="editarUser(model2._id)"
             >
             Save
             </button>
